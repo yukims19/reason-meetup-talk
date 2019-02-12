@@ -121,10 +121,6 @@ What can I do to recover the mistake?
 
 * Act 3: Regroup, Recover, Rebuild (in Reason)
 
-#+REVEAL: split
-
-I met my goals, but what was wrong. I am missing something here.
-
 
 #+REVEAL: split
 
@@ -144,7 +140,8 @@ Enter, ReasonML
 #+REVEAL: split
 
 The pitch:
--You need training wheels.
+
+- You need training wheels.
 - Reason is going to hurt
 - You won't like it
 
@@ -160,11 +157,6 @@ In time, you will become a master.
 
 
 
-
-/*** Forced to use Reason
-Complete rewrite in Reason, shipping to production in one week.
-
-I'm a junior developer, so I don't know what's reasonable, and what's... unreasonable.*/
 
 *** First moments with Reason
 Step 1: Install the Reason toolchain.
@@ -188,7 +180,7 @@ First thing's first in Reason: Start defining your types.
 
 #+REVEAL: split
 
-Not feeling like a master yet
+Not feeling like a master yet.
 Maybe tomorrow will be better?
 
 
@@ -212,9 +204,11 @@ Fine, fine. I'll learn!
   - opam killed my laptop?
 - ...GADTs ocaml-graphql-server... 😱
 
-
 #+REVEAL: split
 
+ 😱 😱 😱 😱 😱
+
+#+REVEAL: split
 Completely overwhelmed.
 
 Don't even know how to phrase the questions I need to get answers.
@@ -305,6 +299,8 @@ Coding collaboration MUCH MUCH easier!
     - Language
     - _Way of thinking_
 
-> Would Yu-killa build a new product with Reason today without any outside pressure?
+#+REVEAL: split
+
+> Would I build a new product with Reason today without any outside pressure?
 
 * Closing thoughts by Sean
