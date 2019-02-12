@@ -71,6 +71,23 @@ Ship to a customer
 
 #+REVEAL: split
 
+/*** Junior developer needs and JavaScript
+-  3 over-arching needs
+ - Demonstrate value
+   - Ship product (quickly)
+ - Grow as a developer
+   - Experiment and iterate quickly
+   - Learn new things quickly
+ - Medium/Long-term stability
+   - Develop transferable skills quickly
+
+#+REVEAL: split
+Goal achieved!
+- Shipped Spenedbot in a week
+- Used new tools and learned new concepts
+- I know `1+ture = 2`*/
+
+#+REVEAL: split
 ...
 
 * Act 2: Tragedy, in which our hero's village is burned to the ground
@@ -88,25 +105,6 @@ Long story short:
 In JavaScript, there is no safety except the safety we guarantee ourselves
 #+END_QUOTE
 
-** Junior developer needs and JavaScript
--  3 over-arching needs
- - Demonstrate value
-   - Ship product (quickly)
- - Grow as a developer
-   - Experiment and iterate quickly
-   - Learn new things quickly
- - Medium/Long-term stability
-   - Develop transferable skills quickly
-
-#+REVEAL: split
-Goal achieved!
-- Shipped Spenedbot in a week
-- Used new tools and learned new concepts
-- I know `1+ture = 2`
-
-#+REVEAL: split
-
-But then...
 
 #+REVEAL: split
 
@@ -122,8 +120,11 @@ What can I do to recover the mistake?
 
 
 * Act 3: Regroup, Recover, Rebuild (in Reason)
-** Junior developer needs and JavaScript, revisited
-[Revisit Junior developer needs with new goals and experience from previous steps]
+
+#+REVEAL: split
+
+I met my goals, but what was wrong. I am missing something here.
+
 
 #+REVEAL: split
 
@@ -142,26 +143,28 @@ Enter, ReasonML
 
 #+REVEAL: split
 
-The pitch: You need training wheels.
-
+The pitch:
+-You need training wheels.
 - Reason is going to hurt
 - You won't like it
-
-#+REVEAL: split
-But, in time, you will become a master.
-
-[[./images/amazing_monk.jpeg]]
 
 #+REVEAL: split
 #+BEGIN_QUOTE
 "But I will feel more comfortable working with you in Reason" - Sean Grove
 #+END_QUOTE
 
+#+REVEAL: split
+In time, you will become a master.
 
-** Forced to use Reason
+[[./images/amazing_monk.jpeg]]
+
+
+
+
+/*** Forced to use Reason
 Complete rewrite in Reason, shipping to production in one week.
 
-I'm a junior developer, so I don't know what's reasonable, and what's... unreasonable.
+I'm a junior developer, so I don't know what's reasonable, and what's... unreasonable.*/
 
 *** First moments with Reason
 Step 1: Install the Reason toolchain.
@@ -174,17 +177,20 @@ Step 1: Install the Reason toolchain.
 
 #+REVEAL: split
 
-Not feeling like a master yet, but it's just a one-time setup. Now, my training begins.
+Would not have persisted by myself, but it's just a one-time setup. Now, my training begins.
+
 
 *** Training stage 1: Types
-First thing's first in Reason: Start typing your types.
+First thing's first in Reason: Start defining your types.
 
 - Lots of extra keyboarding
 - Worked with Java awhile ago, so it's not _too_ bad. "Type inference"?
 
 #+REVEAL: split
 
-Still not shipping product. Feeling even less like a master. Maybe tomorrow will be better?
+Not feeling like a master yet
+Maybe tomorrow will be better?
+
 
 *** Training stage 2: Bindings
 "Reason works with JavaScript libraries!"
@@ -195,6 +201,7 @@ Still not shipping product. Feeling even less like a master. Maybe tomorrow will
 #+REVEAL: split
 
 Fine, fine. I'll learn!
+(Deadline in a week...)
 
 *** Training stage 3: Overload
 
@@ -207,22 +214,19 @@ Fine, fine. I'll learn!
 
 
 #+REVEAL: split
-  😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱
 
-#+REVEAL: split
-
-No longer even want to feel like a master. Completely overwhelmed.
+Completely overwhelmed.
 
 Don't even know how to phrase the questions I need to get answers.
 
 ** Junior developer needs and Reason
 - Demonstrate value
-  - Ship product (quickly): Nah
+  - Ship product (quickly)
 - Grow as a developer
-  - Experiment and iterate quickly: NONONO
-  - Learn new things quickly: NONONONONO
+  - Experiment and iterate quickly
+  - Learn new things quickly
 - Medium/Long-term stability
-  - Develop transferable skills quickly: NNNNNNNNNNOOOOOOOOOOOOAAAAAA
+  - Develop transferable skills quickly
 
 #+REVEAL: split
 
@@ -238,30 +242,68 @@ Less... [[./images/amazing_monk.jpeg]]
 
 * Act 4: 1 month later, the return of Yu-kill
 
+#+REVEAL: split
 As get closer to the shipping stage, I remember the mistakes I made for V1 Spendbot.
 
+
+#+REVEAL: split
 Now, I've come to appreciate the power of Reason more and more:
 
-
 ** Exhaustive pattern matching
-- Discover edge cases never realized before
+Discover edge cases never realized before
 ** Nominal type checking (ex. Person -vs- Pet)
-- Confident on data correctness
+Confident on data type
+
+Person-
+{
+name: "John"
+age: "11"
+weigth: "130"
+}
+
+Pet-
+{
+name: "John"
+age: "11"
+weigth: "130"
+}
+
+
 ** Short feedback loop
 - Understanding coding style
 - Fix mistakes in earlier stage
+
 ** Better communication and collaboration
+
+#+REVEAL: split
+
+- Hardly remember everything in the project
+- Nervous when someone touches my code
+
+#+REVEAL: split
+
 - Fix broken part while editing through
 - Understand function logic by inspecting on data structure
 
+#+REVEAL: split
+
+Coding collaboration MUCH MUCH easier!
+
 ** Junior developer needs and Reason, revisited
 - Demonstrate value
-  - Ship product (+quickly+ reliably): Pretty good
+  - Ship product quickly
+  - _Ship product reliably_
+
 - Grow as a developer
-  - Experiment and iterate +quickly+: Not good
-  - Learn new things +quickly+: Pretty good
+  - Experiment and iterate quickly
+  - Learn new things quickly
+  - _Communicating my thoughts_
+  - _Revising the code_
+
 - Medium/Long-term stability
-  - Develop transferable skills quickly: NNNNNNNNNNOOOOOOOOOOOOAAAAAA
+  - Develop transferable skills
+    - Language
+    - _Way of thinking_
 
 > Would Yu-killa build a new product with Reason today without any outside pressure?
 
