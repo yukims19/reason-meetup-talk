@@ -41,15 +41,6 @@ Meet our protagonist, Yuki.
 
 * Act 1: My idyllic village life of a junior developer
 
-#+ATTR_REVEAL: :frag appear
--  3 over-arching needs
- - Demonstrate value
-   - Ship product (quickly)
- - Grow as a developer
-   - Experiment and iterate quickly
-   - Learn new things quickly
- - Medium/Long-term stability
-   - Develop transferable skills quickly
 #+REVEAL: split
 
 Our hero's first serious project
@@ -65,9 +56,9 @@ Our hero's first serious project
 
 *** Version 1.0
 - Written in pure JS: Node.js talking to Postgres on the backend
-- Hosted on Heroku
 - React.js + Apollo on the frontend
 - Workers + Redis-based queue (kue.js)
+- Hosted on Heroku
 
 
 #+REVEAL: split
@@ -90,7 +81,6 @@ Long story short:
   - Async values (promises)
   - Bad assumptions
 - Hard to refactor
-- No safety except the safety we guarantee ourselves ("in a badass voice")
 #+REVEAL: split
 
 (in a badass voice)
@@ -99,13 +89,20 @@ In JavaScript, there is no safety except the safety we guarantee ourselves
 #+END_QUOTE
 
 ** Junior developer needs and JavaScript
-- Demonstrate value
-  - Ship product (quickly): A++++ WOULD WORK WITH AGAIN
-- Grow as a developer
-  - Experiment and iterate quickly: ASDFASDF
-  - Learn new things quickly: ASDFSDF
-- Medium/Long-term stability
-  - Develop transferable skills quickly: ASDFASDF
+-  3 over-arching needs
+ - Demonstrate value
+   - Ship product (quickly)
+ - Grow as a developer
+   - Experiment and iterate quickly
+   - Learn new things quickly
+ - Medium/Long-term stability
+   - Develop transferable skills quickly
+
+#+REVEAL: split
+Goal achieved!
+- Shipped Spenedbot in a week
+- Used new tools and learned new concepts
+- I know `1+ture = 2`
 
 #+REVEAL: split
 
@@ -120,16 +117,14 @@ Customers saw buggy behavior.
 Senior developers had to debug in production.
 #+REVEAL: split
 
-My life is over. Hopes and dreams, crushed.
+My life is over. I have just done the worst thing in the world.
+What can I do to recover the mistake?
 
-#+REVEAL: split
 
-[Yuki edit about "Goals were wrong"]
-
+* Act 3: Regroup, Recover, Rebuild (in Reason)
 ** Junior developer needs and JavaScript, revisited
 [Revisit Junior developer needs with new goals and experience from previous steps]
 
-* Act 3: Regroup, Recover, Rebuild (in Reason)
 #+REVEAL: split
 
 We have to make Spendbot "production ready."
@@ -152,14 +147,16 @@ The pitch: You need training wheels.
 - Reason is going to hurt
 - You won't like it
 
-#+BEGIN_QUOTE
-"But I will feel more comfortable with you working in Reason" - Sean Grove
-#+END_QUOTE
-
 #+REVEAL: split
-And, in time, you will become a master.
+But, in time, you will become a master.
 
 [[./images/amazing_monk.jpeg]]
+
+#+REVEAL: split
+#+BEGIN_QUOTE
+"But I will feel more comfortable working with you in Reason" - Sean Grove
+#+END_QUOTE
+
 
 ** Forced to use Reason
 Complete rewrite in Reason, shipping to production in one week.
@@ -174,11 +171,6 @@ Step 1: Install the Reason toolchain.
   - One (emacs) environment for the backend
   - One (emacs) environment for the frontend
   - They're separate for some reason.
-
-#+REVEAL: split
-
-I _would not_ have persisted through this on my own. Only the constant threats
-to my family's well-being kept me going forward.
 
 #+REVEAL: split
 
@@ -204,17 +196,13 @@ Still not shipping product. Feeling even less like a master. Maybe tomorrow will
 
 Fine, fine. I'll learn!
 
-Even though My deadline is in a week.
-
-Just have to keep pushing.
-
 *** Training stage 3: Overload
 
 - Reason native
   - Where did ~Js.*~ go?!
+  - Where did ~graphql_ppx~ go?!
 - ~opam~ switches
   - opam killed my laptop?
-- No ~graphql_ppx~ onthe serveR?!?
 - ...GADTs ocaml-graphql-server... 😱
 
 
@@ -250,18 +238,21 @@ Less... [[./images/amazing_monk.jpeg]]
 
 * Act 4: 1 month later, the return of Yu-kill
 
-I've come to appreciate the power of Reason more and more:
+As get closer to the shipping stage, I remember the mistakes I made for V1 Spendbot.
 
-- Exhaustive pattern matching
-- Nominal type checking (ex. Person -vs- Pet)
-- Short feedback loop
-- Better communication and collaboration
+Now, I've come to appreciate the power of Reason more and more:
 
 
 ** Exhaustive pattern matching
+- Discover edge cases never realized before
 ** Nominal type checking (ex. Person -vs- Pet)
+- Confident on data correctness
 ** Short feedback loop
+- Understanding coding style
+- Fix mistakes in earlier stage
 ** Better communication and collaboration
+- Fix broken part while editing through
+- Understand function logic by inspecting on data structure
 
 ** Junior developer needs and Reason, revisited
 - Demonstrate value
