@@ -1,0 +1,277 @@
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_EXTRA_CSS: /Users/s/Desktop/reactiveconf/talk.css
+#+REVEAL_THEME: league
+#+REVEAL_TRANS: linear
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_DEFAULT_FRAG_STYLE: appear
+#+OPTIONS: reveal_title_slide:nil num:nil reveal_history:true toc:nil
+
+* ReasonML. In Production. For a Junior Dev. A inconsistent, difficult talk.
+
+Yuki Li: [[https://twitter.com/yukims19][@yukims19]]
+
+Sean Grove [[https://twitter.com/sgrove][@sgrove]]
+
+Work on [[https://twitter.com/onegraphio][onegraphio]]
+
+* x's narrative, as old as time
+Where ~X~ could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
+#+ATTR_REVEAL: :frag appear
+ - First encounter: WTF?! why?!?!
+ - Grudging acceptance
+ - Over-application
+ - Disgruntled hermit
+
+#+REVEAL: split
+
+This is one such story
+
+#+REVEAL: split
+
+Meet our protagonist, Yuki.
+
+* Yuki: A junior developer, fresh out of university
+- Graduated UCSD in July, 2018
+  - Cognitive Science, with a specialization in HCI
+- Two previous internships
+  - PayGarden: Clojure developer, building web services
+  - GeneralForensics: Python, web-scraping
+- Full-time programmer, including hobbies and side projects for ~8 months
+- First project in Reason ~4 months ago
+
+* Act 1: My idyllic village life of a junior developer
+
+#+ATTR_REVEAL: :frag appear
+-  3 over-arching needs
+ - Demonstrate value
+   - Ship product (quickly)
+ - Grow as a developer
+   - Experiment and iterate quickly
+   - Learn new things quickly
+ - Medium/Long-term stability
+   - Develop transferable skills quickly
+#+REVEAL: split
+
+Our hero's first serious project
+
+** Spendbot
+- Read transactions from Brex (credit card for startups)
+- Post transaction is Slack channel for transparency
+- Notify manager and ask for details if above some threshold
+
+#+REVEAL: split
+
+[[./images/spendbot_preview.png]]
+
+*** Version 1.0
+- Written in pure JS: Node.js talking to Postgres on the backend
+- Hosted on Heroku
+- React.js + Apollo on the frontend
+- Workers + Redis-based queue (kue.js)
+
+
+#+REVEAL: split
+
+Ship to a customer
+
+#+REVEAL: split
+
+... the customer pays us!
+
+#+REVEAL: split
+
+...
+
+* Act 2: Tragedy, in which our hero's village is burned to the ground
+
+** "Production": an unforgiving land
+Long story short:
+- Bugs
+  - Async values (promises)
+  - Bad assumptions
+- Hard to refactor
+- No safety except the safety we guarantee ourselves ("in a badass voice")
+#+REVEAL: split
+
+(in a badass voice)
+#+BEGIN_QUOTE
+In JavaScript, there is no safety except the safety we guarantee ourselves
+#+END_QUOTE
+
+** Junior developer needs and JavaScript
+- Demonstrate value
+  - Ship product (quickly): A++++ WOULD WORK WITH AGAIN
+- Grow as a developer
+  - Experiment and iterate quickly: ASDFASDF
+  - Learn new things quickly: ASDFSDF
+- Medium/Long-term stability
+  - Develop transferable skills quickly: ASDFASDF
+
+#+REVEAL: split
+
+But then...
+
+#+REVEAL: split
+
+I shipped bugs to production.
+
+Customers saw buggy behavior.
+
+Senior developers had to debug in production.
+#+REVEAL: split
+
+My life is over. Hopes and dreams, crushed.
+
+#+REVEAL: split
+
+[Yuki edit about "Goals were wrong"]
+
+** Junior developer needs and JavaScript, revisited
+[Revisit Junior developer needs with new goals and experience from previous steps]
+
+* Act 3: Regroup, Recover, Rebuild (in Reason)
+#+REVEAL: split
+
+We have to make Spendbot "production ready."
+
+#+REVEAL: split
+
+Enter, ReasonML
+
+[reason logo]
+
+#+REVEAL: split
+
+- Demand to use Reason for v2 was given from senior developer
+- I had no choice
+
+#+REVEAL: split
+
+The pitch: You need training wheels.
+
+- Reason is going to hurt
+- You won't like it
+
+#+BEGIN_QUOTE
+"But I will feel more comfortable with you working in Reason" - Sean Grove
+#+END_QUOTE
+
+#+REVEAL: split
+And, in time, you will become a master.
+
+[[./images/amazing_monk.jpeg]]
+
+** Forced to use Reason
+Complete rewrite in Reason, shipping to production in one week.
+
+I'm a junior developer, so I don't know what's reasonable, and what's... unreasonable.
+
+*** First moments with Reason
+Step 1: Install the Reason toolchain.
+
+- I _still_ don't know what we did, exactly
+- Spent more than _half the day_ setting up a dev environment, including
+  - One (emacs) environment for the backend
+  - One (emacs) environment for the frontend
+  - They're separate for some reason.
+
+#+REVEAL: split
+
+I _would not_ have persisted through this on my own. Only the constant threats
+to my family's well-being kept me going forward.
+
+#+REVEAL: split
+
+Not feeling like a master yet, but it's just a one-time setup. Now, my training begins.
+
+*** Training stage 1: Types
+First thing's first in Reason: Start typing your types.
+
+- Lots of extra keyboarding
+- Worked with Java awhile ago, so it's not _too_ bad. "Type inference"?
+
+#+REVEAL: split
+
+Still not shipping product. Feeling even less like a master. Maybe tomorrow will be better?
+
+*** Training stage 2: Bindings
+"Reason works with JavaScript libraries!"
+
+- Tried to use "ant-design", one of the most popular React UI component frameworks
+- BS bindings?! For that!? What are BS binding?
+
+#+REVEAL: split
+
+Fine, fine. I'll learn!
+
+Even though My deadline is in a week.
+
+Just have to keep pushing.
+
+*** Training stage 3: Overload
+
+- Reason native
+  - Where did ~Js.*~ go?!
+- ~opam~ switches
+  - opam killed my laptop?
+- No ~graphql_ppx~ onthe serveR?!?
+- ...GADTs ocaml-graphql-server... 😱
+
+
+#+REVEAL: split
+  😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱
+
+#+REVEAL: split
+
+No longer even want to feel like a master. Completely overwhelmed.
+
+Don't even know how to phrase the questions I need to get answers.
+
+** Junior developer needs and Reason
+- Demonstrate value
+  - Ship product (quickly): Nah
+- Grow as a developer
+  - Experiment and iterate quickly: NONONO
+  - Learn new things quickly: NONONONONO
+- Medium/Long-term stability
+  - Develop transferable skills quickly: NNNNNNNNNNOOOOOOOOOOOOAAAAAA
+
+#+REVEAL: split
+
+Less... [[./images/amazing_monk.jpeg]]
+
+...more [[./images/janitor.jpg]]
+
+** Problems
+
+[[./images/too_busy.jpg]]
+
+* Short interlude with Sean
+
+* Act 4: 1 month later, the return of Yu-kill
+
+I've come to appreciate the power of Reason more and more:
+
+- Exhaustive pattern matching
+- Nominal type checking (ex. Person -vs- Pet)
+- Short feedback loop
+- Better communication and collaboration
+
+
+** Exhaustive pattern matching
+** Nominal type checking (ex. Person -vs- Pet)
+** Short feedback loop
+** Better communication and collaboration
+
+** Junior developer needs and Reason, revisited
+- Demonstrate value
+  - Ship product (+quickly+ reliably): Pretty good
+- Grow as a developer
+  - Experiment and iterate +quickly+: Not good
+  - Learn new things +quickly+: Pretty good
+- Medium/Long-term stability
+  - Develop transferable skills quickly: NNNNNNNNNNOOOOOOOOOOOOAAAAAA
+
+> Would Yu-killa build a new product with Reason today without any outside pressure?
+
+* Closing thoughts by Sean
