@@ -29,8 +29,8 @@
 <div class="slides">
 
 <section>
-<section id="slide-orgec31f6a">
-<h2 id="orgec31f6a">ReasonML. In Production. For a Junior Dev. A inconsistent, difficult talk.</h2>
+<section id="slide-org901f7c9">
+<h2 id="org901f7c9">ReasonML. In Production. For a Junior Dev. A inconsistent and difficult talk.</h2>
 <p>
 Yuki Li <a href="https://twitter.com/yukims19">@yukims19</a>
 </p>
@@ -46,8 +46,8 @@ Work on <a href="https://twitter.com/onegraphio">onegraphio</a>
 </section>
 </section>
 <section>
-<section id="slide-org3184c92">
-<h2 id="org3184c92">x's narrative, as old as time</h2>
+<section id="slide-org07fa643">
+<h2 id="org07fa643">x's narrative, as old as time</h2>
 <p>
 Where <code>X</code> could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
 </p>
@@ -77,8 +77,8 @@ Meet our protagonist, Yuki.
 </section>
 </section>
 <section>
-<section id="slide-org82a12c3">
-<h2 id="org82a12c3">Yuki: A junior developer, fresh out of university</h2>
+<section id="slide-org5fbe175">
+<h2 id="org5fbe175">Yuki: A junior developer, fresh out of university</h2>
 <ul>
 <li>Graduated UCSD in July, 2018
 <ul>
@@ -99,8 +99,8 @@ Meet our protagonist, Yuki.
 </section>
 </section>
 <section>
-<section id="slide-org126ae2f">
-<h2 id="org126ae2f">Act 1: My idyllic village life of a junior developer</h2>
+<section id="slide-org9d0cf2f">
+<h2 id="org9d0cf2f">Act 1: My idyllic village life of a junior developer</h2>
 </section>
 <section >
 
@@ -109,11 +109,11 @@ Our hero's first serious project
 </p>
 
 </section>
-<section id="slide-org81a18d3">
-<h3 id="org81a18d3">Spendbot</h3>
+<section id="slide-org4b4620e">
+<h3 id="org4b4620e">Spendbot</h3>
 <ul>
 <li>Read transactions from Brex (credit card for startups)</li>
-<li>Post transaction is Slack channel for transparency</li>
+<li>Post transaction in Slack channel for company transparency</li>
 <li>Notify manager and ask for details if above some threshold</li>
 
 </ul>
@@ -128,8 +128,8 @@ Our hero's first serious project
 </div>
 
 </section>
-<section id="slide-orga772659">
-<h4 id="orga772659">Version 1.0</h4>
+<section id="slide-org9b3559e">
+<h4 id="org9b3559e">Version 1.0</h4>
 <ul>
 <li>Written in pure JS: Node.js talking to Postgres on the backend</li>
 <li>React.js + Apollo on the frontend</li>
@@ -163,13 +163,13 @@ Ship to a customer
 </section>
 </section>
 <section>
-<section id="slide-orge4ab83f">
-<h2 id="orge4ab83f">Act 2: Tragedy, in which our hero's village is burned to the ground</h2>
-<div class="outline-text-2" id="text-orge4ab83f">
+<section id="slide-orga3a70cb">
+<h2 id="orga3a70cb">Act 2: Tragedy, in which our hero's village is burned to the ground</h2>
+<div class="outline-text-2" id="text-orga3a70cb">
 </div>
 </section>
-<section id="slide-org02e6894">
-<h3 id="org02e6894">"Production": an unforgiving land</h3>
+<section id="slide-org9150f0c">
+<h3 id="org9150f0c">"Production": an unforgiving land</h3>
 <p>
 Long story short:
 </p>
@@ -229,8 +229,8 @@ How can I recover from this mistake?
 </section>
 </section>
 <section>
-<section id="slide-org73a6383">
-<h2 id="org73a6383">Act 3: Regroup, Recover, Rebuild (in Reason)</h2>
+<section id="slide-org69a57f3">
+<h2 id="org69a57f3">Act 3: Regroup, Recover, Rebuild (in Reason)</h2>
 </section>
 <section >
 
@@ -245,9 +245,12 @@ We have to make Spendbot "production ready."
 Enter, ReasonML
 </p>
 
-<p>
-[image/reason<sub>logo.png</sub>]
+
+<div class="figure">
+<p><img src="./images/reason_logo.png" alt="reason_logo.png" />
 </p>
+</div>
+
 
 </section>
 <section >
@@ -315,8 +318,8 @@ It was painful.
 I did not like it.
 </p>
 </section>
-<section id="slide-orgd27703e">
-<h4 id="orgd27703e">First moments with Reason</h4>
+<section id="slide-orgdc56d01">
+<h4 id="orgdc56d01">First moments with Reason</h4>
 <p>
 Step 1: Install the Reason toolchain.
 </p>
@@ -349,8 +352,8 @@ Now, my training begins.
 
 
 </section>
-<section id="slide-org921b308">
-<h4 id="org921b308">Training stage 1: Types</h4>
+<section id="slide-org7997269">
+<h4 id="org7997269">Training stage 1: Types</h4>
 <p>
 First thing's first in Reason: Start defining your types.
 </p>
@@ -366,13 +369,16 @@ First thing's first in Reason: Start defining your types.
 
 <p>
 Not feeling like a master yet.
+</p>
+
+<p>
 Maybe tomorrow will be better?
 </p>
 
 
 </section>
-<section id="slide-orgb9e2f97">
-<h4 id="orgb9e2f97">Training stage 2: Bindings</h4>
+<section id="slide-org1e8af52">
+<h4 id="org1e8af52">Training stage 2: Bindings</h4>
 <p>
 "Reason works with JavaScript libraries!"
 </p>
@@ -388,12 +394,15 @@ Maybe tomorrow will be better?
 
 <p>
 Fine, fine. I'll learn!
+</p>
+
+<p>
 (Deadline in a week&#x2026;)
 </p>
 
 </section>
-<section id="slide-org9b0732d">
-<h4 id="org9b0732d">Training stage 3: EVERYTHING ELSE</h4>
+<section id="slide-orgc5086b3">
+<h4 id="orgc5086b3">Training stage 3: EVERYTHING ELSE</h4>
 <ul>
 <li>Reason native
 <ul>
@@ -434,8 +443,8 @@ Calm down. Phew&#x2026;.
 </p>
 
 </section>
-<section id="slide-orge224ad7">
-<h3 id="orge224ad7">Junior developer needs and Reason</h3>
+<section id="slide-orgf6fa44e">
+<h3 id="orgf6fa44e">Junior developer needs and Reason</h3>
 <ul>
 <li>Demonstrate value
 <ul>
@@ -467,26 +476,43 @@ Less&#x2026; <img src="./images/amazing_monk.jpeg" alt="amazing_monk.jpeg" />
 &#x2026;more <img src="./images/janitor.jpg" alt="janitor.jpg" />
 </p>
 
+
 </section>
-<section id="slide-org23d1f23">
-<h3 id="org23d1f23">Problems</h3>
+</section>
+<section>
+<section id="slide-orgcbeb3c6">
+<h2 id="orgcbeb3c6">Short interlude with Sean</h2>
+<ul>
+<li>Junior developers put tremendous pressure on themselves</li>
+
+</ul>
 
 <div class="figure">
 <p><img src="./images/too_busy.jpg" alt="too_busy.jpg" />
 </p>
 </div>
+</section>
+<section >
+
+<ul>
+<li>Experiencing (painful) failure is important</li>
+<li>&#x2026; in controlled environments</li>
+
+</ul>
+
+</section>
+<section >
+
+<ul>
+<li>The company proved a hypothesis quickly, that's a win</li>
+
+</ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orge9008af">
-<h2 id="orge9008af">Short interlude with Sean</h2>
-
-</section>
-</section>
-<section>
-<section id="slide-orgc988231">
-<h2 id="orgc988231">Act 4: 1 month later, the return of Yu-kill</h2>
+<section id="slide-org8b04b09">
+<h2 id="org8b04b09">Act 4: 1 month later, the return of Yu-killa</h2>
 </section>
 <section >
 <p>
@@ -509,14 +535,14 @@ I've come to appreciate the power of Reason more and more!
 </p>
 
 </section>
-<section id="slide-org7d69379">
-<h3 id="org7d69379">Exhaustive pattern matching</h3>
+<section id="slide-org4c11520">
+<h3 id="org4c11520">Exhaustive pattern matching</h3>
 <p>
 Discover edge cases never realized before
 </p>
 </section>
-<section id="slide-org12a6268">
-<h3 id="org12a6268">Nominal type checking (ex. Person -vs- Pet)</h3>
+<section id="slide-org2f77a05">
+<h3 id="org2f77a05">Nominal type checking (ex. Person -vs- Pet)</h3>
 <p>
 Confident on data type
 </p>
@@ -562,8 +588,8 @@ kind: "dog"
 </ul>
 
 </section>
-<section id="slide-org5819bf0">
-<h3 id="org5819bf0">Short feedback loop</h3>
+<section id="slide-org19ba173">
+<h3 id="org19ba173">Short feedback loop</h3>
 <ul>
 <li>Understanding coding style</li>
 <li>Fix mistakes in earlier stage</li>
@@ -571,8 +597,8 @@ kind: "dog"
 </ul>
 
 </section>
-<section id="slide-org1264738">
-<h3 id="org1264738">Better communication and collaboration</h3>
+<section id="slide-orga702edf">
+<h3 id="orga702edf">Better communication and collaboration</h3>
 </section>
 <section >
 
@@ -593,7 +619,7 @@ With Reason
 </p>
 <ul>
 <li>Fix broken part while editing through</li>
-<li>Understand function logic by inspecting on data structure</li>
+<li>Understand function logic by inspecting data structures in-editor</li>
 
 </ul>
 
@@ -605,8 +631,8 @@ Coding collaboration MUCH MUCH easier!
 </p>
 
 </section>
-<section id="slide-org0593e7b">
-<h3 id="org0593e7b">Junior developer needs and Reason, revisited</h3>
+<section id="slide-org6d7a161">
+<h3 id="org6d7a161">Junior developer needs and Reason, revisited</h3>
 <ul>
 <li>Demonstrate value
 <ul>
@@ -650,7 +676,7 @@ Coding collaboration MUCH MUCH easier!
 </p>
 <ul class="fragment appear">
 <li>Disadvantage: Lack of resources</li>
-<li>Advantage: Easy refactor &amp; code integration with security</li>
+<li>Advantage: Easy refactoring &amp; layering on new code with confidence and happiness</li>
 <li>Advantage &gt; Disadvantage (especially in long term)</li>
 
 </ul>
@@ -659,13 +685,13 @@ Coding collaboration MUCH MUCH easier!
 </section>
 </section>
 <section>
-<section id="slide-org6cd123c">
-<h2 id="org6cd123c">Closing thoughts by Sean</h2>
+<section id="slide-org89a3fdc">
+<h2 id="org89a3fdc">Closing thoughts by Sean</h2>
 </section>
 </section>
 <section>
-<section id="slide-org456d22d">
-<h2 id="org456d22d">x's narrative, as old as time</h2>
+<section id="slide-org2be60b7">
+<h2 id="org2be60b7">x's narrative, as old as time</h2>
 <p>
 Where <code>X</code> could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
 </p>
@@ -673,10 +699,56 @@ Where <code>X</code> could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
 <li>First encounter: WTF?! why?!?!</li>
 <li>Grudging acceptance</li>
 
-<li>Over-application</li>
-<li>Disgruntled hermit</li>
+<li><del>Over-application</del></li>
+<li><del>Disgruntled hermit</del></li>
 
 </ul>
+
+</section>
+<section id="slide-org354a35b">
+<h3 id="org354a35b">Mentoring: Get over first encounter</h3>
+
+<div class="figure">
+<p><img src="./images/initial.png" alt="initial.png" />
+</p>
+</div>
+<ul>
+<li>Cajoling</li>
+<li>Threats</li>
+<li>Appeals to authority</li>
+
+</ul>
+
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./images/reduced.png" alt="reduced.png" />
+</p>
+</div>
+
+<ul>
+<li>Reduce activation energy required</li>
+<li>Find intermediate wins</li>
+<li>Plan a (fairly) safe path</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd46194c">
+<h3 id="orgd46194c">Mentoring: Prevent disgruntled hermits</h3>
+<ul>
+<li>Show the painful parts with a cheerful attitude</li>
+<li>Demonstrate the tradeoffs of the technology yourself</li>
+<li>OneSQL</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org55a5270">
+<h2 id="org55a5270">Bonus: SpotDJ!</h2>
 </section>
 </section>
 </div>
