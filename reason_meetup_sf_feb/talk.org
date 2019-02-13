@@ -8,7 +8,7 @@
 
 * ReasonML. In Production. For a Junior Dev. A inconsistent, difficult talk.
 
-Yuki Li: [[https://twitter.com/yukims19][@yukims19]]
+Yuki Li [[https://twitter.com/yukims19][@yukims19]]
 
 Sean Grove [[https://twitter.com/sgrove][@sgrove]]
 
@@ -71,23 +71,6 @@ Ship to a customer
 
 #+REVEAL: split
 
-/*** Junior developer needs and JavaScript
--  3 over-arching needs
- - Demonstrate value
-   - Ship product (quickly)
- - Grow as a developer
-   - Experiment and iterate quickly
-   - Learn new things quickly
- - Medium/Long-term stability
-   - Develop transferable skills quickly
-
-#+REVEAL: split
-Goal achieved!
-- Shipped Spenedbot in a week
-- Used new tools and learned new concepts
-- I know `1+ture = 2`*/
-
-#+REVEAL: split
 ...
 
 * Act 2: Tragedy, in which our hero's village is burned to the ground
@@ -130,12 +113,13 @@ We have to make Spendbot "production ready."
 
 Enter, ReasonML
 
-[reason logo]
+[image/reason_logo.png]
 
 #+REVEAL: split
 
-- Demand to use Reason for v2 was given from senior developer
-- I had no choice
+Demand to use Reason for v2 was given from senior developer.
+
+I had no choice.
 
 #+REVEAL: split
 
@@ -169,7 +153,9 @@ Step 1: Install the Reason toolchain.
 
 #+REVEAL: split
 
-Would not have persisted by myself, but it's just a one-time setup. Now, my training begins.
+Would not have persisted by myself, but it's just a one-time setup.
+
+Now, my training begins.
 
 
 *** Training stage 1: Types
@@ -206,7 +192,7 @@ Fine, fine. I'll learn!
 
 #+REVEAL: split
 
- 😱 😱 😱 😱 😱
+ 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱
 
 #+REVEAL: split
 Completely overwhelmed.
@@ -237,30 +223,40 @@ Less... [[./images/amazing_monk.jpeg]]
 * Act 4: 1 month later, the return of Yu-kill
 
 #+REVEAL: split
-As get closer to the shipping stage, I remember the mistakes I made for V1 Spendbot.
+As approach the shipping stage,
+
+I remember the nightmare of V1 Spendbot.
 
 
 #+REVEAL: split
-Now, I've come to appreciate the power of Reason more and more:
+Now,
+
+I've come to appreciate the power of Reason more and more!
 
 ** Exhaustive pattern matching
 Discover edge cases never realized before
 ** Nominal type checking (ex. Person -vs- Pet)
 Confident on data type
 
-Person-
-{
-name: "John"
-age: "11"
-weigth: "130"
-}
+- With structual typing:
 
-Pet-
-{
+#+BEGIN_SRC <json>
+Person = {
 name: "John"
 age: "11"
-weigth: "130"
+weight: "130"
 }
+#+END_SRC
+
+-vs-
+
+#+BEGIN_SRC <json>
+Pet = {
+name: "John"
+age: "11"
+weight: "130"
+}
+#+END_SRC
 
 
 ** Short feedback loop
@@ -271,11 +267,13 @@ weigth: "130"
 
 #+REVEAL: split
 
+As project scales up
 - Hardly remember everything in the project
 - Nervous when someone touches my code
 
 #+REVEAL: split
 
+With Reason
 - Fix broken part while editing through
 - Understand function logic by inspecting on data structure
 
