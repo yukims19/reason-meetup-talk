@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title></title>
-<meta name="author" content="(Yuki Li)"/>
+<meta name="author" content="(Sean Grove)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
@@ -29,8 +29,8 @@
 <div class="slides">
 
 <section>
-<section id="slide-org02a99ce">
-<h2 id="org02a99ce">ReasonML. In Production. For a Junior Dev. A inconsistent, difficult talk.</h2>
+<section id="slide-orgec31f6a">
+<h2 id="orgec31f6a">ReasonML. In Production. For a Junior Dev. A inconsistent, difficult talk.</h2>
 <p>
 Yuki Li <a href="https://twitter.com/yukims19">@yukims19</a>
 </p>
@@ -46,14 +46,15 @@ Work on <a href="https://twitter.com/onegraphio">onegraphio</a>
 </section>
 </section>
 <section>
-<section id="slide-org5258680">
-<h2 id="org5258680">x's narrative, as old as time</h2>
+<section id="slide-org3184c92">
+<h2 id="org3184c92">x's narrative, as old as time</h2>
 <p>
 Where <code>X</code> could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
 </p>
 <ul class="fragment appear">
 <li>First encounter: WTF?! why?!?!</li>
 <li>Grudging acceptance</li>
+
 <li>Over-application</li>
 <li>Disgruntled hermit</li>
 
@@ -76,8 +77,8 @@ Meet our protagonist, Yuki.
 </section>
 </section>
 <section>
-<section id="slide-org2362c3a">
-<h2 id="org2362c3a">Yuki: A junior developer, fresh out of university</h2>
+<section id="slide-org82a12c3">
+<h2 id="org82a12c3">Yuki: A junior developer, fresh out of university</h2>
 <ul>
 <li>Graduated UCSD in July, 2018
 <ul>
@@ -98,8 +99,8 @@ Meet our protagonist, Yuki.
 </section>
 </section>
 <section>
-<section id="slide-org3b7ff73">
-<h2 id="org3b7ff73">Act 1: My idyllic village life of a junior developer</h2>
+<section id="slide-org126ae2f">
+<h2 id="org126ae2f">Act 1: My idyllic village life of a junior developer</h2>
 </section>
 <section >
 
@@ -108,8 +109,8 @@ Our hero's first serious project
 </p>
 
 </section>
-<section id="slide-org493b5c6">
-<h3 id="org493b5c6">Spendbot</h3>
+<section id="slide-org81a18d3">
+<h3 id="org81a18d3">Spendbot</h3>
 <ul>
 <li>Read transactions from Brex (credit card for startups)</li>
 <li>Post transaction is Slack channel for transparency</li>
@@ -127,8 +128,8 @@ Our hero's first serious project
 </div>
 
 </section>
-<section id="slide-org6a0f135">
-<h4 id="org6a0f135">Version 1.0</h4>
+<section id="slide-orga772659">
+<h4 id="orga772659">Version 1.0</h4>
 <ul>
 <li>Written in pure JS: Node.js talking to Postgres on the backend</li>
 <li>React.js + Apollo on the frontend</li>
@@ -162,13 +163,13 @@ Ship to a customer
 </section>
 </section>
 <section>
-<section id="slide-orge46de2f">
-<h2 id="orge46de2f">Act 2: Tragedy, in which our hero's village is burned to the ground</h2>
-<div class="outline-text-2" id="text-orge46de2f">
+<section id="slide-orge4ab83f">
+<h2 id="orge4ab83f">Act 2: Tragedy, in which our hero's village is burned to the ground</h2>
+<div class="outline-text-2" id="text-orge4ab83f">
 </div>
 </section>
-<section id="slide-orgdd2c200">
-<h3 id="orgdd2c200">"Production": an unforgiving land</h3>
+<section id="slide-org02e6894">
+<h3 id="org02e6894">"Production": an unforgiving land</h3>
 <p>
 Long story short:
 </p>
@@ -213,16 +214,23 @@ Senior developers had to debug in production.
 <section >
 
 <p>
-My life is over. I have just done the worst thing in the world.
-What can I do to recover the mistake?
+My life is over.
+</p>
+
+<p>
+I have just done the worst thing in the world.
+</p>
+
+<p>
+How can I recover from this mistake?
 </p>
 
 
 </section>
 </section>
 <section>
-<section id="slide-org7df1a1f">
-<h2 id="org7df1a1f">Act 3: Regroup, Recover, Rebuild (in Reason)</h2>
+<section id="slide-org73a6383">
+<h2 id="org73a6383">Act 3: Regroup, Recover, Rebuild (in Reason)</h2>
 </section>
 <section >
 
@@ -238,7 +246,7 @@ Enter, ReasonML
 </p>
 
 <p>
-[reason logo]
+[image/reason<sub>logo.png</sub>]
 </p>
 
 </section>
@@ -286,12 +294,29 @@ In time, you will become a master.
 </p>
 </div>
 
+</section>
+<section >
 
-
+<p>
+Let me recap my first professional experience with Reason for you now.
+</p>
 
 </section>
-<section id="slide-org4f43468">
-<h4 id="org4f43468">First moments with Reason</h4>
+<section >
+
+<p>
+Warning: Sean was right.
+</p>
+
+<p class="fragment appear">
+It was painful.
+</p>
+<p class="fragment appear">
+I did not like it.
+</p>
+</section>
+<section id="slide-orgd27703e">
+<h4 id="orgd27703e">First moments with Reason</h4>
 <p>
 Step 1: Install the Reason toolchain.
 </p>
@@ -315,14 +340,17 @@ Step 1: Install the Reason toolchain.
 Would not have persisted by myself, but it's just a one-time setup.
 </p>
 
-<p>
+<p class="fragment appear">
+Also, I didn't have a choice in the matter.
+</p>
+<p class="fragment appear">
 Now, my training begins.
 </p>
 
 
 </section>
-<section id="slide-orgd04d692">
-<h4 id="orgd04d692">Training stage 1: Types</h4>
+<section id="slide-org921b308">
+<h4 id="org921b308">Training stage 1: Types</h4>
 <p>
 First thing's first in Reason: Start defining your types.
 </p>
@@ -343,14 +371,14 @@ Maybe tomorrow will be better?
 
 
 </section>
-<section id="slide-org32346d5">
-<h4 id="org32346d5">Training stage 2: Bindings</h4>
+<section id="slide-orgb9e2f97">
+<h4 id="orgb9e2f97">Training stage 2: Bindings</h4>
 <p>
 "Reason works with JavaScript libraries!"
 </p>
 
 <ul>
-<li>Tried to use "ant-design", one of the most popular React UI component frameworks</li>
+<li>Tried to use <code>ant-design</code>, one of the most popular React UI component frameworks</li>
 <li>BS bindings?! For that!? What are BS binding?</li>
 
 </ul>
@@ -364,8 +392,8 @@ Fine, fine. I'll learn!
 </p>
 
 </section>
-<section id="slide-orgf605cdc">
-<h4 id="orgf605cdc">Training stage 3: Overload</h4>
+<section id="slide-org9b0732d">
+<h4 id="org9b0732d">Training stage 3: EVERYTHING ELSE</h4>
 <ul>
 <li>Reason native
 <ul>
@@ -400,8 +428,14 @@ Don't even know how to phrase the questions I need to get answers.
 </p>
 
 </section>
-<section id="slide-org3ff06b8">
-<h3 id="org3ff06b8">Junior developer needs and Reason</h3>
+<section >
+<p>
+Calm down. Phew&#x2026;.
+</p>
+
+</section>
+<section id="slide-orge224ad7">
+<h3 id="orge224ad7">Junior developer needs and Reason</h3>
 <ul>
 <li>Demonstrate value
 <ul>
@@ -434,8 +468,8 @@ Less&#x2026; <img src="./images/amazing_monk.jpeg" alt="amazing_monk.jpeg" />
 </p>
 
 </section>
-<section id="slide-org692fc6e">
-<h3 id="org692fc6e">Problems</h3>
+<section id="slide-org23d1f23">
+<h3 id="org23d1f23">Problems</h3>
 
 <div class="figure">
 <p><img src="./images/too_busy.jpg" alt="too_busy.jpg" />
@@ -445,14 +479,14 @@ Less&#x2026; <img src="./images/amazing_monk.jpeg" alt="amazing_monk.jpeg" />
 </section>
 </section>
 <section>
-<section id="slide-orgb4c3bd8">
-<h2 id="orgb4c3bd8">Short interlude with Sean</h2>
+<section id="slide-orge9008af">
+<h2 id="orge9008af">Short interlude with Sean</h2>
 
 </section>
 </section>
 <section>
-<section id="slide-org8f1ed5a">
-<h2 id="org8f1ed5a">Act 4: 1 month later, the return of Yu-kill</h2>
+<section id="slide-orgc988231">
+<h2 id="orgc988231">Act 4: 1 month later, the return of Yu-kill</h2>
 </section>
 <section >
 <p>
@@ -475,14 +509,14 @@ I've come to appreciate the power of Reason more and more!
 </p>
 
 </section>
-<section id="slide-org020f72b">
-<h3 id="org020f72b">Exhaustive pattern matching</h3>
+<section id="slide-org7d69379">
+<h3 id="org7d69379">Exhaustive pattern matching</h3>
 <p>
 Discover edge cases never realized before
 </p>
 </section>
-<section id="slide-org2dc7746">
-<h3 id="org2dc7746">Nominal type checking (ex. Person -vs- Pet)</h3>
+<section id="slide-org12a6268">
+<h3 id="org12a6268">Nominal type checking (ex. Person -vs- Pet)</h3>
 <p>
 Confident on data type
 </p>
@@ -496,8 +530,8 @@ Confident on data type
 
 <pre><code class="<json>" >Person = {
 name: "John"
-age: "11"
-weight: "130"
+age: 25
+weight: 130
 }
 </code></pre>
 </div>
@@ -509,17 +543,27 @@ weight: "130"
 <div class="org-src-container">
 
 <pre><code class="<json>" >Pet = {
-name: "John"
-age: "11"
-weight: "130"
+name: "Rover"
+age: 63
+kind: "dog"
 }
 </code></pre>
 </div>
 
+<ul>
+<li><code>name</code> and <code>age</code> are same substructure, but refer to different things</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Possible to pass <code>Pet</code> when I meant <code>Person</code>&#x2026; human years vs dog years is going to be hard to debug!</li>
+
+</ul>
 
 </section>
-<section id="slide-org17c93e2">
-<h3 id="org17c93e2">Short feedback loop</h3>
+<section id="slide-org5819bf0">
+<h3 id="org5819bf0">Short feedback loop</h3>
 <ul>
 <li>Understanding coding style</li>
 <li>Fix mistakes in earlier stage</li>
@@ -527,8 +571,8 @@ weight: "130"
 </ul>
 
 </section>
-<section id="slide-orgd310d67">
-<h3 id="orgd310d67">Better communication and collaboration</h3>
+<section id="slide-org1264738">
+<h3 id="org1264738">Better communication and collaboration</h3>
 </section>
 <section >
 
@@ -561,8 +605,8 @@ Coding collaboration MUCH MUCH easier!
 </p>
 
 </section>
-<section id="slide-org87741c6">
-<h3 id="org87741c6">Junior developer needs and Reason, revisited</h3>
+<section id="slide-org0593e7b">
+<h3 id="org0593e7b">Junior developer needs and Reason, revisited</h3>
 <ul>
 <li>Demonstrate value
 <ul>
@@ -599,12 +643,40 @@ Coding collaboration MUCH MUCH easier!
 <p>
 &gt; Would I build a new product with Reason today without any outside pressure?
 </p>
+</section>
+<section >
+<p>
+&#x2026;. <b>maybe</b> yes?
+</p>
+<ul class="fragment appear">
+<li>Disadvantage: Lack of resources</li>
+<li>Advantage: Easy refactor &amp; code integration with security</li>
+<li>Advantage &gt; Disadvantage (especially in long term)</li>
+
+</ul>
+
 
 </section>
 </section>
 <section>
-<section id="slide-org6d80ebc">
-<h2 id="org6d80ebc">Closing thoughts by Sean</h2>
+<section id="slide-org6cd123c">
+<h2 id="org6cd123c">Closing thoughts by Sean</h2>
+</section>
+</section>
+<section>
+<section id="slide-org456d22d">
+<h2 id="org456d22d">x's narrative, as old as time</h2>
+<p>
+Where <code>X</code> could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
+</p>
+<ul class="fragment appear">
+<li>First encounter: WTF?! why?!?!</li>
+<li>Grudging acceptance</li>
+
+<li>Over-application</li>
+<li>Disgruntled hermit</li>
+
+</ul>
 </section>
 </section>
 </div>

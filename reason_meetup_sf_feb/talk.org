@@ -19,6 +19,7 @@ Where ~X~ could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
 #+ATTR_REVEAL: :frag appear
  - First encounter: WTF?! why?!?!
  - Grudging acceptance
+
  - Over-application
  - Disgruntled hermit
 
@@ -98,8 +99,11 @@ Customers saw buggy behavior.
 Senior developers had to debug in production.
 #+REVEAL: split
 
-My life is over. I have just done the worst thing in the world.
-What can I do to recover the mistake?
+My life is over.
+
+I have just done the worst thing in the world.
+
+How can I recover from this mistake?
 
 
 * Act 3: Regroup, Recover, Rebuild (in Reason)
@@ -139,9 +143,18 @@ In time, you will become a master.
 
 [[./images/amazing_monk.jpeg]]
 
+#+REVEAL: split
 
+Let me recap my first professional experience with Reason for you now.
 
+#+REVEAL: split
 
+Warning: Sean was right.
+
+#+ATTR_REVEAL: :frag appear
+It was painful.
+#+ATTR_REVEAL: :frag appear
+I did not like it.
 *** First moments with Reason
 Step 1: Install the Reason toolchain.
 
@@ -155,6 +168,9 @@ Step 1: Install the Reason toolchain.
 
 Would not have persisted by myself, but it's just a one-time setup.
 
+#+ATTR_REVEAL: :frag appear
+Also, I didn't have a choice in the matter.
+#+ATTR_REVEAL: :frag appear
 Now, my training begins.
 
 
@@ -173,7 +189,7 @@ Maybe tomorrow will be better?
 *** Training stage 2: Bindings
 "Reason works with JavaScript libraries!"
 
-- Tried to use "ant-design", one of the most popular React UI component frameworks
+- Tried to use ~ant-design~, one of the most popular React UI component frameworks
 - BS bindings?! For that!? What are BS binding?
 
 #+REVEAL: split
@@ -181,7 +197,7 @@ Maybe tomorrow will be better?
 Fine, fine. I'll learn!
 (Deadline in a week...)
 
-*** Training stage 3: Overload
+*** Training stage 3: EVERYTHING ELSE 
 
 - Reason native
   - Where did ~Js.*~ go?!
@@ -198,6 +214,9 @@ Fine, fine. I'll learn!
 Completely overwhelmed.
 
 Don't even know how to phrase the questions I need to get answers.
+
+#+REVEAL: split
+Calm down. Phew....
 
 ** Junior developer needs and Reason
 - Demonstrate value
@@ -243,8 +262,8 @@ Confident on data type
 #+BEGIN_SRC <json>
 Person = {
 name: "John"
-age: "11"
-weight: "130"
+age: 25
+weight: 130
 }
 #+END_SRC
 
@@ -252,12 +271,15 @@ weight: "130"
 
 #+BEGIN_SRC <json>
 Pet = {
-name: "John"
-age: "11"
-weight: "130"
+name: "Rover"
+age: 63
+kind: "dog"
 }
 #+END_SRC
 
+- ~name~ and ~age~ are same substructure, but refer to different things
+#+REVEAL: split
+- Possible to pass ~Pet~ when I meant ~Person~... human years vs dog years is going to be hard to debug!
 
 ** Short feedback loop
 - Understanding coding style
@@ -300,5 +322,20 @@ Coding collaboration MUCH MUCH easier!
 #+REVEAL: split
 
 > Would I build a new product with Reason today without any outside pressure?
+#+REVEAL: split
+.... *maybe* yes?
+#+ATTR_REVEAL: :frag appear
+- Disadvantage: Lack of resources
+- Advantage: Easy refactor & code integration with security
+- Advantage > Disadvantage (especially in long term)
+
 
 * Closing thoughts by Sean
+* x's narrative, as old as time
+Where ~X~ could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
+#+ATTR_REVEAL: :frag appear
+ - First encounter: WTF?! why?!?!
+ - Grudging acceptance
+
+ - Over-application
+ - Disgruntled hermit
