@@ -14,6 +14,15 @@ Sean Grove [[https://twitter.com/sgrove][@sgrove]]
 
 Work on [[https://twitter.com/onegraphio][onegraphio]]
 
+* Yuki: A junior engineer, fresh out of university
+- Graduated UCSD in July, 2018
+  - Cognitive Science, with a specialization in HCI
+- Two previous internships
+  - PayGarden: Clojure engineer, building web services
+  - GeneralForensics: Python, web-scraping
+- Full-time programmer, including hobbies and side projects for ~8 months
+- First project in Reason ~4 months ago
+
 * x's narrative, as old as time
 Where ~X~ could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
 #+ATTR_REVEAL: :frag appear
@@ -29,18 +38,9 @@ This is one such story
 
 #+REVEAL: split
 
-Meet our protagonist, Yuki.
+Our protagonist, Yuki.
 
-* Yuki: A junior developer, fresh out of university
-- Graduated UCSD in July, 2018
-  - Cognitive Science, with a specialization in HCI
-- Two previous internships
-  - PayGarden: Clojure developer, building web services
-  - GeneralForensics: Python, web-scraping
-- Full-time programmer, including hobbies and side projects for ~8 months
-- First project in Reason ~4 months ago
-
-* Act 1: My idyllic village life of a junior developer
+* Act 1: My idyllic village life of a junior engineer
 
 #+REVEAL: split
 
@@ -70,6 +70,8 @@ Ship to a customer
 
 ... the customer pays us!
 
+[[image/champion.jpg]]
+
 #+REVEAL: split
 
 ...
@@ -96,7 +98,7 @@ I shipped bugs to production.
 
 Customers saw buggy behavior.
 
-Senior developers had to debug in production.
+Senior engineers had to debug in production.
 #+REVEAL: split
 
 My life is over.
@@ -121,7 +123,7 @@ Enter, ReasonML
 
 #+REVEAL: split
 
-Demand to use Reason for v2 was given from senior developer.
+Demand to use Reason for v2 was given from senior engineer.
 
 I had no choice.
 
@@ -178,7 +180,7 @@ Now, my training begins.
 First thing's first in Reason: Start defining your types.
 
 - Lots of extra keyboarding
-- Worked with Java awhile ago, so it's not _too_ bad. "Type inference"?
+- Lots of initial planing
 
 #+REVEAL: split
 
@@ -218,14 +220,17 @@ Don't even know how to phrase the questions I need to get answers.
 #+REVEAL: split
 Calm down. Phew....
 
-** Junior developer needs and Reason
-- Demonstrate value
+** Junior engineer needs and Reason
+1. Demonstrate value
   - Ship product (quickly)
-- Grow as a developer
+
+2. Grow as a engineer
   - Experiment and iterate quickly
   - Learn new things quickly
-- Medium/Long-term stability
+
+3. Medium/Long-term stability
   - Develop transferable skills quickly
+
 
 #+REVEAL: split
 
@@ -233,11 +238,11 @@ Less... [[./images/amazing_monk.jpeg]]
 
 ...more [[./images/janitor.jpg]]
 
-** Problems
 
-[[./images/too_busy.jpg]]
-
-* Short interlude with Sean
+** What about TypeScript?
+- Easier tooling installation
+- Simpler binding syntax
+- Type `:any`
 
 * Act 4: 1 month later, the return of Yu-kill
 
@@ -282,8 +287,8 @@ kind: "dog"
 - Possible to pass ~Pet~ when I meant ~Person~... human years vs dog years is going to be hard to debug!
 
 ** Short feedback loop
-- Understanding coding style
 - Fix mistakes in earlier stage
+- Understanding coding style
 
 ** Better communication and collaboration
 
@@ -303,39 +308,73 @@ With Reason
 
 Coding collaboration MUCH MUCH easier!
 
-** Junior developer needs and Reason, revisited
-- Demonstrate value
+** Junior engineer needs and Reason, revisited
+1. Demonstrate value
   - Ship product quickly
   - _Ship product reliably_
 
-- Grow as a developer
+ Reason:
+- Cover edge cases
+- Check data types
+- Simplify the code
+- Increase the readability/maintainability of my code
+
+#+REVEAL: split
+2. Grow as a engineer
   - Experiment and iterate quickly
   - Learn new things quickly
   - _Communicating my thoughts_
   - _Revising the code_
 
-- Medium/Long-term stability
+ Reason:
+- Easier coding collaboration
+
+#+REVEAL: split
+3. Medium/Long-term stability
   - Develop transferable skills
     - Language
     - _Way of thinking_
 
+ Reason:
+- Short feedback loop
+
+
+** Again, what about TypeScript?
+- Hard to implement exahustive patter matching
+- Structural Type checking
+- Type `:any`
+
 #+REVEAL: split
 
+** JavaScript vs TypeScript vs ReasonML
+
+
+* Some thoughts from my mentor, Sean
+- Thougts on collaboration process
+- Why let a junior developer took that responsibility
+- Why Reason instead of TypeScript
+
+* Closing thoughts 
+#+REVEAL: split
 > Would I build a new product with Reason today without any outside pressure?
 #+REVEAL: split
 .... *maybe* yes?
+
+#+REVEAL: split
+Disadvantage: lack of resources & steep learning curve
+
+Advantage: easy refactor & code integration with security
+
+Advantage > Disadvantage (especially in long term)
+
+#+REVEAL: split
+> Would I recommend other junior engineers try to write ReasonML code?
+
+#+REVEAL: split
+A resounding yes!
 #+ATTR_REVEAL: :frag appear
-- Disadvantage: Lack of resources
-- Advantage: Easy refactor & code integration with security
-- Advantage > Disadvantage (especially in long term)
+- Learn many useful concepts
+- Avoid stupid bugs
+- Start to notice bad habits 
 
-
-* Closing thoughts by Sean
-* x's narrative, as old as time
-Where ~X~ could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
-#+ATTR_REVEAL: :frag appear
- - First encounter: WTF?! why?!?!
- - Grudging acceptance
-
- - Over-application
- - Disgruntled hermit
+* Thank you
