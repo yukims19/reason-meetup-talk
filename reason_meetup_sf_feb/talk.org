@@ -191,7 +191,7 @@ Maybe tomorrow will be better?
 "Reason works with JavaScript libraries!"
 
 - Tried to use ~ant-design~, one of the most popular React UI component frameworks
-- BS bindings?! For that!? What are BS binding?
+- BuckleScript bindings?! For that!? What are BS binding?
 
 #+REVEAL: split
 
