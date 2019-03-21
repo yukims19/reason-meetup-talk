@@ -154,7 +154,7 @@ The pitch:
 He was right.
 
 #+ATTR_REVEAL: :frag appear
-But struggles paied of well in the end
+But struggles paid of well in the end
 
 *** First moments with Reason
 Step 1: Install the Reason toolchain.
