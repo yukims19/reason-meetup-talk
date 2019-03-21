@@ -6,7 +6,7 @@
 #+REVEAL_DEFAULT_FRAG_STYLE: appear
 #+OPTIONS: reveal_title_slide:nil num:nil reveal_history:true toc:nil
 
-* ReasonML. In Production. For a Junior Dev. A inconsistent and difficult talk.
+* ReasonML. In Production. How types and tooling help and hinder your junior devs
 
 Yuki Li [[https://twitter.com/yukims19][@yukims19]]
 
@@ -22,6 +22,17 @@ Work on [[https://twitter.com/onegraphio][onegraphio]]
   - GeneralForensics: Python, web-scraping
 - Full-time programmer, including hobbies and side projects for ~8 months
 - First project in Reason ~4 months ago
+
+* Typescript & ReasonMl
+Typescript
+-  maintained by Microsoft 
+-  provides static typing, classes and interfaces on top of JS. 
+
+ReasonML 
+- created by FB based on Ocaml. 
+- provides static typing (but in a way that is more strict than Typescript)
+
+Both compiles to Javascript, so you can easily collaborate with your existing JS code base.
 
 * x's narrative, as old as time
 Where ~X~ could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
@@ -70,7 +81,7 @@ Ship to a customer
 
 ... the customer pays us!
 
-[[image/champion.jpg]]
+[[./images/champion.jpg]]
 
 #+REVEAL: split
 
@@ -107,6 +118,8 @@ I have just done the worst thing in the world.
 
 How can I recover from this mistake?
 
+[[./images/crying.gif]]
+
 
 * Act 3: Regroup, Recover, Rebuild (in Reason)
 
@@ -137,27 +150,12 @@ The pitch:
 - You won't like it
 
 #+REVEAL: split
-#+BEGIN_QUOTE
-"But I will feel more comfortable working with you in Reason" - Sean Grove
-#+END_QUOTE
 
-#+REVEAL: split
-In time, you will become a master.
-
-[[./images/amazing_monk.jpeg]]
-
-#+REVEAL: split
-
-Let me recap my first professional experience with Reason for you now.
-
-#+REVEAL: split
-
-Warning: Sean was right.
+He was right.
 
 #+ATTR_REVEAL: :frag appear
-It was painful.
-#+ATTR_REVEAL: :frag appear
-I did not like it.
+But struggles paied of well in the end
+
 *** First moments with Reason
 Step 1: Install the Reason toolchain.
 
@@ -172,8 +170,7 @@ Step 1: Install the Reason toolchain.
 Would not have persisted by myself, but it's just a one-time setup.
 
 #+ATTR_REVEAL: :frag appear
-Also, I didn't have a choice in the matter.
-#+ATTR_REVEAL: :frag appear
+
 Now, my training begins.
 
 
@@ -212,7 +209,6 @@ Fine, fine. I'll learn!
 - ...GADTs ocaml-graphql-server... 😱
 
 #+REVEAL: split
-
  😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱
 
 #+REVEAL: split
@@ -237,16 +233,16 @@ Calm down. Phew....
 
 #+REVEAL: split
 
-Less... [[./images/amazing_monk.jpeg]]
-
-...more [[./images/janitor.jpg]]
-
+[[./images/janitor.jpg]]
 
 
 ** What about TypeScript?
 - Easier tooling installation
 - Simpler binding syntax
 - Type `:any`
+
+#+REVEAL: split
+Don't get scared yet!
 
 * Act 4: 1 month later, the return of Yu-killa
 
@@ -260,6 +256,8 @@ I remember the nightmare of V1 Spendbot.
 Now,
 
 I've come to appreciate the power of Reason more and more!
+
+[[./images/love.jpg]]
 
 ** Exhaustive pattern matching
 Discover edge cases never realized before
@@ -313,33 +311,33 @@ With Reason
 Coding collaboration MUCH MUCH easier!
 
 ** Junior engineer needs and Reason, revisited
-1. Demonstrate value
+#1. Demonstrate value
   - Ship product quickly
   - _Ship product reliably_
 
- Reason:
+ReasonML:
 - Cover edge cases
 - Check data types
 - Simplify the code
-- Increase the readability/maintainability of my code
+- Increase the readability of code
 
 #+REVEAL: split
-2. Grow as a engineer
+#2. Grow as a engineer
   - Experiment and iterate quickly
   - Learn new things quickly
   - _Communicating my thoughts_
   - _Revising the code_
 
- Reason:
-- Easier coding collaboration
+Reason:
+   - Easier coding collaboration
 
 #+REVEAL: split
-3. Medium/Long-term stability
+#3. Medium/Long-term stability
   - Develop transferable skills
     - Language
     - _Way of thinking_
 
- Reason:
+Reason:
 - Short feedback loop
 
 
@@ -348,7 +346,6 @@ Coding collaboration MUCH MUCH easier!
 - Structural Type checking
 - Type `:any`
 
-#+REVEAL: split
 
 ** JavaScript vs TypeScript vs ReasonML
 
@@ -362,7 +359,6 @@ Coding collaboration MUCH MUCH easier!
 - ... in controlled environments
 
 #+REVEAL: split
-
 
 - The company proved a hypothesis quickly, that's a win
 
@@ -403,12 +399,6 @@ Coding collaboration MUCH MUCH easier!
 - Advantage: Easy refactoring & layering on new code with confidence and happiness
 - Advantage > Disadvantage (especially in long term)
 
-#+REVEAL: split
-Disadvantage: lack of resources & steep learning curve
-
-Advantage: easy refactor & code integration with security
-
-Advantage > Disadvantage (especially in long term)
 
 #+REVEAL: split
 > Would I recommend other junior engineers try to write ReasonML code?

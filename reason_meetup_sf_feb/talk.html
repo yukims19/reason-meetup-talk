@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(Yuki Li)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="/Users/s/Desktop/reactiveconf/talk.css"/>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-orgf10dcce">
+<h2 id="orgf10dcce">ReasonML. In Production. How types and tooling help and hinder your junior devs</h2>
+<p>
+Yuki Li <a href="https://twitter.com/yukims19">@yukims19</a>
+</p>
+
+<p>
+Sean Grove <a href="https://twitter.com/sgrove">@sgrove</a>
+</p>
+
+<p>
+Work on <a href="https://twitter.com/onegraphio">onegraphio</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org0471ee3">
+<h2 id="org0471ee3">Yuki: A junior engineer, fresh out of university</h2>
+<ul>
+<li>Graduated UCSD in July, 2018
+<ul>
+<li>Cognitive Science, with a specialization in HCI</li>
+
+</ul></li>
+<li>Two previous internships
+<ul>
+<li>PayGarden: Clojure engineer, building web services</li>
+<li>GeneralForensics: Python, web-scraping</li>
+
+</ul></li>
+<li>Full-time programmer, including hobbies and side projects for ~8 months</li>
+<li>First project in Reason ~4 months ago</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge6c0919">
+<h2 id="orge6c0919">Typescript &amp; ReasonMl</h2>
+<p>
+Typescript
+</p>
+<ul>
+<li>maintained by Microsoft</li>
+<li>provides static typing, classes and interfaces on top of JS.</li>
+
+</ul>
+
+<p>
+ReasonML 
+</p>
+<ul>
+<li>created by FB based on Ocaml.</li>
+<li>provides static typing (but in a way that is more strict than Typescript)</li>
+
+</ul>
+
+<p>
+Both compiles to Javascript, so you can easily collaborate with your existing JS code base.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf1460db">
+<h2 id="orgf1460db">x's narrative, as old as time</h2>
+<p>
+Where <code>X</code> could be: #{ReasonML, Elm, Haskell, Clojure, Scheme}
+</p>
+<ul class="fragment appear">
+<li>First encounter: WTF?! why?!?!</li>
+<li>Grudging acceptance</li>
+
+<li>Over-application</li>
+<li>Disgruntled hermit</li>
+
+</ul>
+
+</section>
+<section >
+
+<p>
+This is one such story
+</p>
+
+</section>
+<section >
+
+<p>
+Our protagonist, Yuki.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org40ae4a3">
+<h2 id="org40ae4a3">Act 1: My idyllic village life of a junior engineer</h2>
+</section>
+<section >
+
+<p>
+Our hero's first serious project
+</p>
+
+</section>
+<section id="slide-org51414f1">
+<h3 id="org51414f1">Spendbot</h3>
+<ul>
+<li>Read transactions from Brex (credit card for startups)</li>
+<li>Post transaction in Slack channel for company transparency</li>
+<li>Notify manager and ask for details if above some threshold</li>
+
+</ul>
+
+</section>
+<section >
+
+
+<div class="figure">
+<p><img src="./images/spendbot_preview.png" alt="spendbot_preview.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgde044aa">
+<h4 id="orgde044aa">Version 1.0</h4>
+<ul>
+<li>Written in pure JS: Node.js talking to Postgres on the backend</li>
+<li>React.js + Apollo on the frontend</li>
+<li>Workers + Redis-based queue (kue.js)</li>
+<li>Hosted on Heroku</li>
+
+</ul>
+
+
+</section>
+<section >
+
+<p>
+Ship to a customer
+</p>
+
+</section>
+<section >
+
+<p>
+&#x2026; the customer pays us!
+</p>
+
+
+<div class="figure">
+<p><img src="./images/champion.jpg" alt="champion.jpg" />
+</p>
+</div>
+
+</section>
+<section >
+
+<p>
+&#x2026;
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf0dd743">
+<h2 id="orgf0dd743">Act 2: Tragedy, in which our hero's village is burned to the ground</h2>
+<div class="outline-text-2" id="text-orgf0dd743">
+</div>
+</section>
+<section id="slide-orgcb11446">
+<h3 id="orgcb11446">"Production": an unforgiving land</h3>
+<p>
+Long story short:
+</p>
+<ul>
+<li>Bugs
+<ul>
+<li>Async values (promises)</li>
+<li>Bad assumptions</li>
+
+</ul></li>
+<li>Hard to refactor</li>
+
+</ul>
+</section>
+<section >
+
+<p>
+(in a badass voice)
+</p>
+<blockquote nil>
+<p>
+In JavaScript, there is no safety except the safety we guarantee ourselves
+</p>
+</blockquote>
+
+
+</section>
+<section >
+
+<p>
+I shipped bugs to production.
+</p>
+
+<p>
+Customers saw buggy behavior.
+</p>
+
+<p>
+Senior engineers had to debug in production.
+</p>
+</section>
+<section >
+
+<p>
+My life is over.
+</p>
+
+<p>
+I have just done the worst thing in the world.
+</p>
+
+<p>
+How can I recover from this mistake?
+</p>
+
+
+<div class="figure">
+<p><img src="./images/crying.gif" alt="crying.gif" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org0811383">
+<h2 id="org0811383">Act 3: Regroup, Recover, Rebuild (in Reason)</h2>
+</section>
+<section >
+
+<p>
+We have to make Spendbot "production ready."
+</p>
+
+</section>
+<section >
+
+<p>
+Enter, ReasonML
+</p>
+
+
+<div class="figure">
+<p><img src="./images/reason_logo.png" alt="reason_logo.png" />
+</p>
+</div>
+
+
+</section>
+<section >
+
+<p>
+Demand to use Reason for v2 was given from senior engineer.
+</p>
+
+<p>
+I had no choice.
+</p>
+
+</section>
+<section >
+
+<p>
+The pitch:
+</p>
+
+<ul>
+<li>You need training wheels.</li>
+<li>Reason is going to hurt</li>
+<li>You won't like it</li>
+
+</ul>
+
+</section>
+<section >
+
+<p>
+He was right.
+</p>
+
+<p class="fragment appear">
+But struggles paied of well in the end
+</p>
+
+</section>
+<section id="slide-org05953f8">
+<h4 id="org05953f8">First moments with Reason</h4>
+<p>
+Step 1: Install the Reason toolchain.
+</p>
+
+<ul>
+<li>I <span class="underline">still</span> don't know what we did, exactly</li>
+<li>Spent more than <span class="underline">half the day</span> setting up a dev environment, including
+<ul>
+<li>One (emacs) environment for the backend</li>
+<li>One (emacs) environment for the frontend</li>
+<li>They're separate for some reason.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section >
+
+<p>
+Would not have persisted by myself, but it's just a one-time setup.
+</p>
+
+<p>
+Now, my training begins.
+</p>
+
+
+</section>
+<section id="slide-orgec94ede">
+<h4 id="orgec94ede">Training stage 1: Types</h4>
+<p>
+First thing's first in Reason: Start defining your types.
+</p>
+
+<ul>
+<li>Lots of extra keyboarding</li>
+<li>Lots of initial planing</li>
+
+</ul>
+
+</section>
+<section >
+
+<p>
+Not feeling like a master yet.
+</p>
+
+<p>
+Maybe tomorrow will be better?
+</p>
+
+
+</section>
+<section id="slide-orgead8702">
+<h4 id="orgead8702">Training stage 2: Bindings</h4>
+<p>
+"Reason works with JavaScript libraries!"
+</p>
+
+<ul>
+<li>Tried to use <code>ant-design</code>, one of the most popular React UI component frameworks</li>
+<li>BS bindings?! For that!? What are BS binding?</li>
+
+</ul>
+
+</section>
+<section >
+
+<p>
+Fine, fine. I'll learn!
+</p>
+
+<p>
+(Deadline in a week&#x2026;)
+</p>
+
+</section>
+<section id="slide-org66a6e2c">
+<h4 id="org66a6e2c">Training stage 3: EVERYTHING ELSE</h4>
+<ul>
+<li>Reason native
+<ul>
+<li>Where did <code>Js.*</code> go?!</li>
+<li>Where did <code>graphql_ppx</code> go?!</li>
+
+</ul></li>
+<li><code>opam</code> switches
+<ul>
+<li>opam killed my laptop?</li>
+
+</ul></li>
+<li>&#x2026;GADTs ocaml-graphql-server&#x2026; 😱</li>
+
+</ul>
+
+</section>
+<section >
+<p>
+😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱 😱
+</p>
+
+</section>
+<section >
+<p>
+Completely overwhelmed.
+</p>
+
+<p>
+Don't even know how to phrase the questions I need to get answers.
+</p>
+
+</section>
+<section >
+<p>
+Calm down. Phew&#x2026;.
+</p>
+
+</section>
+<section id="slide-org2cf24ee">
+<h3 id="org2cf24ee">Junior engineer needs and Reason</h3>
+<ol>
+<li>Demonstrate value
+<ul>
+<li>Ship product (quickly)</li>
+
+</ul></li>
+
+<li>Grow as a engineer
+<ul>
+<li>Experiment and iterate quickly</li>
+<li>Learn new things quickly</li>
+
+</ul></li>
+
+<li>Medium/Long-term stability
+<ul>
+<li>Develop transferable skills quickly</li>
+
+</ul></li>
+
+</ol>
+
+
+</section>
+<section >
+
+
+<div class="figure">
+<p><img src="./images/janitor.jpg" alt="janitor.jpg" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org204247d">
+<h3 id="org204247d">What about TypeScript?</h3>
+<ul>
+<li>Easier tooling installation</li>
+<li>Simpler binding syntax</li>
+<li>Type `:any`</li>
+
+</ul>
+
+</section>
+<section >
+<p>
+Don't get scared yet!
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org452a671">
+<h2 id="org452a671">Act 4: 1 month later, the return of Yu-killa</h2>
+</section>
+<section >
+<p>
+As approach the shipping stage,
+</p>
+
+<p>
+I remember the nightmare of V1 Spendbot.
+</p>
+
+
+</section>
+<section >
+<p>
+Now,
+</p>
+
+<p>
+I've come to appreciate the power of Reason more and more!
+</p>
+
+
+<div class="figure">
+<p><img src="./images/love.jpg" alt="love.jpg" />
+</p>
+</div>
+
+</section>
+<section id="slide-orga80d15a">
+<h3 id="orga80d15a">Exhaustive pattern matching</h3>
+<p>
+Discover edge cases never realized before
+</p>
+</section>
+<section id="slide-org4d3aa1d">
+<h3 id="org4d3aa1d">Nominal type checking (ex. Person -vs- Pet)</h3>
+<p>
+Confident on data type
+</p>
+
+<ul>
+<li>With structual typing:</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="<json>" >Person = {
+name: "John"
+age: 25
+weight: 130
+}
+</code></pre>
+</div>
+
+<p>
+-vs-
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="<json>" >Pet = {
+name: "Rover"
+age: 63
+kind: "dog"
+}
+</code></pre>
+</div>
+
+<ul>
+<li><code>name</code> and <code>age</code> are same substructure, but refer to different things</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Possible to pass <code>Pet</code> when I meant <code>Person</code>&#x2026; human years vs dog years is going to be hard to debug!</li>
+
+</ul>
+
+</section>
+<section id="slide-org514413c">
+<h3 id="org514413c">Short feedback loop</h3>
+<ul>
+<li>Fix mistakes in earlier stage</li>
+<li>Understanding coding style</li>
+
+</ul>
+
+</section>
+<section id="slide-org06644c0">
+<h3 id="org06644c0">Better communication and collaboration</h3>
+</section>
+<section >
+
+<p>
+As project scales up
+</p>
+<ul>
+<li>Hardly remember everything in the project</li>
+<li>Nervous when someone touches my code</li>
+
+</ul>
+
+</section>
+<section >
+
+<p>
+With Reason
+</p>
+<ul>
+<li>Fix broken part while editing through</li>
+<li>Understand function logic by inspecting data structures in-editor</li>
+
+</ul>
+
+</section>
+<section >
+
+<p>
+Coding collaboration MUCH MUCH easier!
+</p>
+
+</section>
+<section id="slide-org699bc23">
+<h3 id="org699bc23">Junior engineer needs and Reason, revisited</h3>
+<p>
+#1. Demonstrate value
+</p>
+<ul>
+<li>Ship product quickly</li>
+<li><span class="underline">Ship product reliably</span></li>
+
+</ul>
+
+<p>
+ReasonML:
+</p>
+<ul>
+<li>Cover edge cases</li>
+<li>Check data types</li>
+<li>Simplify the code</li>
+<li>Increase the readability of code</li>
+
+</ul>
+
+</section>
+<section >
+<p>
+#2. Grow as a engineer
+</p>
+<ul>
+<li>Experiment and iterate quickly</li>
+<li>Learn new things quickly</li>
+<li><span class="underline">Communicating my thoughts</span></li>
+<li><span class="underline">Revising the code</span></li>
+
+</ul>
+
+<p>
+Reason:
+</p>
+<ul>
+<li>Easier coding collaboration</li>
+
+</ul>
+
+</section>
+<section >
+<p>
+#3. Medium/Long-term stability
+</p>
+<ul>
+<li>Develop transferable skills
+<ul>
+<li>Language</li>
+<li><span class="underline">Way of thinking</span></li>
+
+</ul></li>
+
+</ul>
+
+<p>
+Reason:
+</p>
+<ul>
+<li>Short feedback loop</li>
+
+</ul>
+
+
+</section>
+<section id="slide-orgbbf849c">
+<h3 id="orgbbf849c">Again, what about TypeScript?</h3>
+<ul>
+<li>Hard to implement exahustive patter matching</li>
+<li>Structural Type checking</li>
+<li>Type `:any`</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org9011c6f">
+<h3 id="org9011c6f">JavaScript vs TypeScript vs ReasonML</h3>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgd90c191">
+<h2 id="orgd90c191">Some thoughts from my mentor, Sean</h2>
+<ul>
+<li>Junior developers put tremendous pressure on themselves</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./images/too_busy.jpg" alt="too_busy.jpg" />
+</p>
+</div>
+</section>
+<section >
+
+<ul>
+<li>Experiencing (painful) failure is important</li>
+<li>&#x2026; in controlled environments</li>
+
+</ul>
+
+</section>
+<section >
+
+<ul>
+<li>The company proved a hypothesis quickly, that's a win</li>
+
+</ul>
+
+</section>
+<section >
+<ul>
+<li>Why Reason instead of TypeScript</li>
+
+</ul>
+
+
+<ul>
+<li><del>Over-application</del></li>
+<li><del>Disgruntled hermit</del></li>
+
+</ul>
+
+</section>
+<section id="slide-orgaffea0a">
+<h3 id="orgaffea0a">Mentoring: Get over first encounter</h3>
+
+<div class="figure">
+<p><img src="./images/initial.png" alt="initial.png" />
+</p>
+</div>
+<ul>
+<li>Cajoling</li>
+<li>Threats</li>
+<li>Appeals to authority</li>
+
+</ul>
+
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./images/reduced.png" alt="reduced.png" />
+</p>
+</div>
+
+<ul>
+<li>Reduce activation energy required</li>
+<li>Find intermediate wins</li>
+<li>Plan a (fairly) safe path</li>
+
+</ul>
+
+</section>
+<section id="slide-org9b28f78">
+<h3 id="org9b28f78">Mentoring: Prevent disgruntled hermits</h3>
+<ul>
+<li>Show the painful parts with a cheerful attitude</li>
+<li>Demonstrate the tradeoffs of the technology yourself</li>
+<li>OneSQL</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org8c0295e">
+<h2 id="org8c0295e">Closing thoughts</h2>
+</section>
+<section >
+<p>
+&gt; Would I build a new product with Reason today without any outside pressure?
+</p>
+</section>
+<section >
+<p>
+&#x2026;. <b>maybe</b> yes?
+</p>
+
+<ul class="fragment appear">
+<li>Disadvantage: Lack of resources</li>
+<li>Advantage: Easy refactoring &amp; layering on new code with confidence and happiness</li>
+<li>Advantage &gt; Disadvantage (especially in long term)</li>
+
+</ul>
+
+
+</section>
+<section >
+<p>
+&gt; Would I recommend other junior engineers try to write ReasonML code?
+</p>
+
+</section>
+<section >
+<p>
+A resounding yes!
+</p>
+<ul class="fragment appear">
+<li>Learn many useful concepts</li>
+<li>Avoid stupid bugs</li>
+<li>Start to notice bad habits</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orga1a344a">
+<h2 id="orga1a344a">Thank you</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
