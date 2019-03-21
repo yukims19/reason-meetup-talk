@@ -6,7 +6,7 @@
 #+REVEAL_DEFAULT_FRAG_STYLE: appear
 #+OPTIONS: reveal_title_slide:nil num:nil reveal_history:true toc:nil
 
-* ReasonML. In Production. For a Junior Dev. A inconsistent, difficult talk.
+* ReasonML. In Production. For a Junior Dev. A inconsistent and difficult talk.
 
 Yuki Li [[https://twitter.com/yukims19][@yukims19]]
 
@@ -48,7 +48,7 @@ Our hero's first serious project
 
 ** Spendbot
 - Read transactions from Brex (credit card for startups)
-- Post transaction is Slack channel for transparency
+- Post transaction in Slack channel for company transparency
 - Notify manager and ask for details if above some threshold
 
 #+REVEAL: split
@@ -119,7 +119,8 @@ We have to make Spendbot "production ready."
 
 Enter, ReasonML
 
-[image/reason_logo.png]
+[[./images/reason_logo.png]]
+
 
 #+REVEAL: split
 
@@ -185,6 +186,7 @@ First thing's first in Reason: Start defining your types.
 #+REVEAL: split
 
 Not feeling like a master yet.
+
 Maybe tomorrow will be better?
 
 
@@ -197,6 +199,7 @@ Maybe tomorrow will be better?
 #+REVEAL: split
 
 Fine, fine. I'll learn!
+
 (Deadline in a week...)
 
 *** Training stage 3: EVERYTHING ELSE 
@@ -239,12 +242,13 @@ Less... [[./images/amazing_monk.jpeg]]
 ...more [[./images/janitor.jpg]]
 
 
+
 ** What about TypeScript?
 - Easier tooling installation
 - Simpler binding syntax
 - Type `:any`
 
-* Act 4: 1 month later, the return of Yu-kill
+* Act 4: 1 month later, the return of Yu-killa
 
 #+REVEAL: split
 As approach the shipping stage,
@@ -302,7 +306,7 @@ As project scales up
 
 With Reason
 - Fix broken part while editing through
-- Understand function logic by inspecting on data structure
+- Understand function logic by inspecting data structures in-editor
 
 #+REVEAL: split
 
@@ -350,15 +354,54 @@ Coding collaboration MUCH MUCH easier!
 
 
 * Some thoughts from my mentor, Sean
-- Thougts on collaboration process
-- Why let a junior developer took that responsibility
+- Junior developers put tremendous pressure on themselves
+[[./images/too_busy.jpg]]
+#+REVEAL: split
+
+- Experiencing (painful) failure is important
+- ... in controlled environments
+
+#+REVEAL: split
+
+
+- The company proved a hypothesis quickly, that's a win
+
+#+REVEAL: split
 - Why Reason instead of TypeScript
+
+
+ - +Over-application+
+ - +Disgruntled hermit+
+
+** Mentoring: Get over first encounter
+[[./images/initial.png]]
+- Cajoling
+- Threats
+- Appeals to authority
+
+#+REVEAL: split
+[[./images/reduced.png]]
+
+- Reduce activation energy required
+- Find intermediate wins
+- Plan a (fairly) safe path
+
+** Mentoring: Prevent disgruntled hermits
+- Show the painful parts with a cheerful attitude
+- Demonstrate the tradeoffs of the technology yourself
+- OneSQL
+
 
 * Closing thoughts 
 #+REVEAL: split
 > Would I build a new product with Reason today without any outside pressure?
 #+REVEAL: split
 .... *maybe* yes?
+
+#+ATTR_REVEAL: :frag appear
+- Disadvantage: Lack of resources
+- Advantage: Easy refactoring & layering on new code with confidence and happiness
+- Advantage > Disadvantage (especially in long term)
 
 #+REVEAL: split
 Disadvantage: lack of resources & steep learning curve
@@ -377,4 +420,6 @@ A resounding yes!
 - Avoid stupid bugs
 - Start to notice bad habits 
 
+
 * Thank you
+
